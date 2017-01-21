@@ -1,3 +1,1366 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <script>
+        
+        /*if(document.cookie==""){
+        window.location.assign("http://192.168.0.103/prueba1/index.html");
+        }*/
+      </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Inicio</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+      
+    <style type="text/css">
+        
+        .modal.modal-wide .modal-dialog{
+            width: 90%;
+        }
+        
+    </style>
+
+  </head>
+<body>
+
+    <div class="container" id="principal">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="inicio.html">
+            <img alt="Brand" src="logoedp.jpg">
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="inicio.html">Inicio<span class="sr-only"></span></a></li>
+            <li><a href="centrales.html">Otras Graficas<span class="sr-only"></span></a></li>
+            <!--<li><a href="favoritos.html">Pedro<span class="sr-only"></span></a></li>-->
+            <li><a href="faq.html">FAQ<span class="sr-only"></span></a></li>
+            <li><a href="about.html">Contacto<span class="sr-only"></span></a></li>
+            <!--<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Color de fondo <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="javascript:void(document.getElementById('principal').style.backgroundColor='black')">Negro</a></li>
+                <li><a href="javascript:void(document.getElementById('principal').style.backgroundColor='white')">Blanco</a></li>
+                <li><a href="javascript:void(document.getElementById('principal').style.backgroundColor='grey')">Gris</a></li>
+                <li class="divider"></li>
+                <li><a href="javascript:void(document.body.style.backgroundColor='black')">Todo Negro</a></li>
+                <li><a href="javascript:void(document.body.style.backgroundColor='white')">Todo Blanco</a></li>
+                <li><a href="javascript:{
+                 var S=document.createElement('style');
+                 S.type = 'text/css';
+                 S.appendChild(document.createTextNode('h2{font-size:36px;color:blue;}
+                                                        body{color:green;font-size:20px;}'));
+                 document.body.appendChild(S);};
+                 void 0">Insertar estilo dinamicamente</a></li>  
+
+              </ul>
+            </li>-->
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+               
+            <ul id="welcomeUser" style="float: left;"></ul>
+              <!--<button  class="btn btn-success"> <a href="#modalcreate" role="button" data-toggle="modal" style="color:white">Nueva gráfica</a></button>-->  
+            <button type="button" id="buttonlogout" data-target="#Logout" class="btn btn-primary">Log out</button>  
+            </form>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+        
+        
+<!-- espacios para no solaparse con la navbar-->      
+    <br>
+    <br>
+    <br>    
+<!-- MAIN --> 
+        
+    <!--<div class="panel panel-info">
+        <div class="panel-heading" role="tab" id="headingTwo">
+          <h4 class="panel-title">
+            <a class="collapsed" onclick="getGraficas(1)" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
+              MIS PLANES DE INVERSION
+            </a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+
+                  <table class="table table-striped table-bordered table-hover">
+                      <thead>
+                        <tr>    
+                          <th width="30%">Grafica</th>
+                          <th width="10%">Pintar</th>
+                        </tr>
+                      </thead>
+                      <tbody id="bodyplanes">
+                      </tbody>
+                  </table>
+
+        </div>
+    </div>-->
+    
+    <div class="hero-unit"> 
+        <div class="row-fluid">
+			<div class="span4">
+
+				<!--<form action="datos.php" method="post">
+				<fieldset>-->
+				
+				<legend>Datos Gráfica</legend>
+				
+				<label>Pasta cada año</label>
+				<input class="input-xlarge" name="pasta" type="text" required placeholder="Escriba algo..." required>
+				<span class="help-inline"></span>
+                <br>
+                <br>
+				<label>Años</label>
+				<input class="input-xlarge" name="años1" placeholder="Escriba algo..." type="text" required>
+				<span class="help-inline"></span>
+                <br>
+                <br>
+				<label>Tipo de Interes</label>
+				<input class="input-xlarge" name="interes" rows="3" placeholder="Escriba algo...">
+                <span class="help-inline"></span>
+				<br>
+                <br>
+				
+				<button type="submit" value="calcular" class="btn btn-primary">Calcular</button>
+				
+				<!--</fieldset>
+				</form>-->
+		
+			</div>
+			
+			<div class="span8">	
+				<img class="img-rounded" align="right" src="grafica.jpg">
+                <div id="graficagrande"></div>
+			</div>	
+            
+		</div>
+    </div>
+
+    <!--<div class="modal modal-wide fade" id="modalcreate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Crear Gráfica</h4>
+            </div>
+          <div class="modal-body">
+              
+            <label>Titulo gráfica</label>
+				<input class="input-xlarge" id="titulografica" type="text" required placeholder="Escriba algo...">
+				<span class="help-inline"></span>
+                    
+                <br>   
+                <br>
+                    
+             <label>Central</label>
+                    <select id="central" onchange="hayCambio()">
+                        <option value="CT-ABOÑO">CT-ABOÑO</option>
+                        <option value="CT-SOTO">CT-SOTO</option>
+                        <option value="CC-SOTO">CC-SOTO</option>
+                        <option value="CC-CASTEJON">CC-CASTEJON</option>
+                        <option value="CCHH">CCHH</option>
+                        <option value="COGENERACION">COGENERACIÓN</option>
+                    </select> 
+                    
+                <br>                    
+                <br>
+				
+             <div>
+				<button id="siguiente" onclick="modal1to2()" class="btn btn-primary">Siguiente >></button>
+             </div>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal modal-wide fade" id="modalbusqueda" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Crear Gráfica</h4>
+            </div>
+          <div class="modal-body">
+             
+            <div id="titulo2" style="display:none"></div>
+            <div id="central2" style="display:none"></div> 
+            <div id="keys2" style="display:none"></div> 
+              
+            <div id="tablaelegidos" class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th width="40%">Tag</th>
+                            <th width="13%">Span(min)</th>
+                            <th width="13%">Span(max)</th>
+                            <th width="4%">Uds</th>
+                            <th width="13%">Rango Min</th>
+                            <th width="13%">Rango Max</th>
+                            <th width="4%">Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bodyelegidos">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 600px;">              
+
+                <tr>
+
+                    <td align="left" width="30%">
+                        Tag:
+                        <input size="15%" id="tag" placeholder="Escriba algo..." type="text" required>
+                    <span class="help-inline"></span>
+                    </td>
+
+                    <td align="left" width="30%">
+                        Descripción:
+                        <input size="15%" id="descripcion" placeholder="Escriba algo..." type="text" required>
+                        <br>
+                        <br>
+
+                    </td>
+
+                    <td align="left" width="30%"><br>
+                        Servidor:
+                        <select id="server">
+                            <option value="todos">todos</option>
+                            <option selected value="brayton.intrahc.com">brayton</option>
+                            <option value="carnot.intrahc.com">carnot</option>
+                            <option value="curtis.intrahc.com">curtis</option>
+                            <option value="laval.intrahc.com">laval</option>
+                            <option value="tesla.intrahc.com">tesla</option>
+                        </select> 
+                    </td>
+
+                    <td align="left" width="10%">
+                        <br>
+                        <button onclick="buscar()" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                    </td>
+
+                </tr>
+            
+                </table> 
+              
+            </div> 
+              
+            <div id="tablaresultados" class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>    
+                            <th width="30%">Tag</th>
+                            <th width="30%">Descripcion</th>
+                            <th width="30%">Servidor</th>
+                            <th width="10%">Añadir</th>
+                        </tr>
+                    </thead>
+                        <tbody id="bodyresultados">
+                    </tbody>
+                </table>
+            </div>
+              
+            <div class="modal-footer">
+                <button onclick="atrass()" class="btn btn-primary">Atras</button>
+                <button id="previsualizar" onclick="previsualizar()" class="btn btn-success" disabled>Previsualizar</button>
+                <!--<button onclick="guardarGraficas()" class="btn btn-primary">Guardar</button>-->
+            <!--</div>
+
+          </div>
+        </div>
+      </div>
+    </div>-->
+    
+    <!--<div class="modal modal-wide fade" id="modalgrafica" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="tituloGrafica"></h4>
+                <h6 class="modal-title" id="subtituloGrafica"></h6>
+            </div>
+          <div class="modal-body">
+              
+              <div id="ejemplo2" align="center"></div>
+              <br>
+				
+            <div class="modal-footer">
+                <button onclick="atrasss()" class="btn btn-primary">Atras</button>
+                <button onclick="guardarTag()" class="btn btn-success">Guardar</button>
+            </div>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+        
+    <div class="modal modal-wide fade" id="modalguardado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-body" id="bodyguardado">
+              
+              <h2>Gráfica guardada correctamente</h2>
+
+            </div>
+        </div>
+      </div>
+    </div>      
+          
+    <br>
+    
+    <div class="modal modal-wide fade" id="modalgraficafinal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+          <div class="modal-body">
+              
+              <div id="graficaFinal" align="center"></div>
+              <br>
+				
+            <div class="modal-footer">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th width="40%">Tag</th>
+                            <th width="15%">Span(min)</th>
+                            <th width="15%">Span(max)</th>
+                            <th width="15%">Rango Min</th>
+                            <th width="15%">Rango Max</th>
+                        </tr>
+                    </thead>
+                    <tbody align="left" id="bodyopciones">
+                    </tbody>
+                </table>
+            </div>
+              
+          </div>
+        </div>
+      </div>
+    </div>-->
+    
+          
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="bootstrap-3.3.7-dist/js/jquery-1.11.1.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>   
+    <script>
+/*
+        //vble global resultados consulta
+        var resultados=[];
+        var elegidos=[];
+        var graficas=[];
+        var servers=['brayton.intrahc.com',  'carnot.intrahc.com', 'curtis.intrahc.com', 'laval.intrahc.com', 'tesla.intrahc.com'];
+        //var centrales=['CT-ABOÑO', 'CT-SOTO', 'CC-SOTO', 'CC-CASTEJON', 'CCHH', 'COGENERACIÓN'];
+        var id=0;
+        
+        var central;
+        var titulografica;
+        
+        var unidades=[];
+        var leyendas=[];
+        var fechas=[];
+        var tags=[];
+        var minimos=[];
+        var maximos=[];*/
+        
+        $('#buttonlogout').click(function () { //borrar cookies
+            
+            document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+            document.cookie = "passwd=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+            //window.location.assign("http://192.168.0.103/prueba1/index.html");
+            
+         });
+                              
+        function buscar(){                
+                
+            //document.getElementById("tablaresultados").style.display = "block";
+            
+            //recogemos valores de la pagina
+            var tagjs = document.getElementById('tag').value;
+            var descriptorjs = document.getElementById('descripcion').value;
+            //var clavejs = document.getElementById('clave').value;
+            
+            var serverjs = document.getElementById('server').value;
+            var elements = document.getElementById('bodyresultados');
+            
+            //limpiar la tabla pintada
+            elements.innerHTML = '';
+            while (elements.childElementCount > 0) {
+                elements.removeChild(elements.firstElementChild);
+            }
+            //limpiar variables globales
+            resultados=[];
+            
+            //busqueda de la navbar
+            /*var aux2 = clavejs.localeCompare("");
+            if ( aux2 !=0){
+                tagjs=clavejs;
+                serverjs="todos";
+            }*/
+            
+            //busqueda por descriptor -> metemos descriptor en tagjs
+            var aux3 = descriptorjs.localeCompare("");
+            if ( aux3 !=0){
+                tagjs=descriptorjs;
+            }
+            
+            //otra llamada en caso de buscar en todos los servers
+            var todos = "todos";
+            var aux = serverjs.localeCompare(todos);
+            if (aux == 0){ 
+                //buscarTodosServer(tagjs, elements); 
+                $.ajax({ //llamada ajax
+								
+                url: "http://192.168.0.105:8080/ServiciosSkan/services/Servicio/buscarTagTodosServer", //la URL donde se realiza la petición
+				method:'POST', //El método HTTP usado para la petición
+				data:{exprRegular:tagjs},//los parámetros que se usaran para la solicitud
+								
+				success: function (response){
+
+                    //procesar respuesta slice con otro numero
+                    array=procesarRes(response);
+                    rellenaHTML(array, elements);
+            
+			    },
+								
+                failure: function (error){
+				    alert("no resibimos respuesta wei");
+			        }
+                });//ajax
+            }
+            
+            else{
+			$.ajax({ //llamada ajax
+								
+                url: "http://192.168.0.105:8080/ServiciosSkan/services/Servicio/buscarTag", //la URL donde se realiza la petición
+				method:'POST', //El método HTTP usado para la petición
+				data:{exprRegular:tagjs, server:serverjs},//los parámetros que se usaran para la solicitud
+								
+				success: function (response){
+
+                    array=procesarRes(response);
+                    rellenaHTML(array, elements);
+            
+			    },
+								
+                failure: function (error){
+				    alert("no resibimos respuesta wei");
+			        }
+                });//ajax
+            }
+
+        }
+        
+        function procesarRes(response){/*
+         
+            var resp=(new XMLSerializer()).serializeToString(response);//pasamos a string la respuesta
+
+                    resp=resp.slice(68);//recortamos los caracteres no deseados
+                    resp=resp.slice(0,-35);
+                    //alert(resp);
+
+                    var aux=resp.split('|$|');
+                    var array=[];
+                    var aux2=[];
+                    for( var i=0; i<aux.length-1; i++){ //-1 porque el ultimo elemento esta vacio
+                        j=i*6;
+                        aux2=aux[i].split('|');
+                        array[j]=aux2[0];
+                        array[j+1]=aux2[1];
+                        array[j+2]=aux2[2]; 
+                        array[j+3]=aux2[3];
+                        array[j+4]=aux2[4];
+                        array[j+5]=aux2[5];
+            }
+            
+            return array;*/
+        }
+        
+        function rellenaHTML(array, elements){/*
+                    
+              //metemos en la tabla los elementos
+              for ( var i=0; i<array.length; i=i+6, id=id+1) {
+                  //guardamos en la matriz resultados la respuesta
+                  resultados.push([id, array[i], array[i+1], array[i+2], array[i+3], array[i+4], array[i+5]]);
+
+                  var fila =  '<div id=' + id + 
+                              '><tr><td>' + array[i] +
+                              '</td><td><FONT SIZE=1>' + array[i+1] +
+                                '</font></td><td>' + array[i+3] + 
+                              '</td><td><button class="btn btn-default" onclick="añadirTagElegidos('+ id +')">' +
+                              '<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>' +
+                              '</td></tr></div>';
+                  elements.innerHTML += fila;
+              }*/
+
+        }
+        
+        function hayCambio(){/*
+            
+            titulografica=document.getElementById('titulografica').value;
+            central=document.getElementById('central').value; 
+            
+            console.log(central);
+            
+            if(document.getElementById('titulografica').value!='' && document.getElementById('central').value!='')             
+                $("#siguiente").prop('disabled', false);
+            
+            else{ console.log(central);
+                $("#siguiente").prop('disabled', true);
+                }*/
+        }
+        
+        //transicion del primer modal al segundo
+        function modal1to2(){
+            
+            /*var titulografica=document.getElementById('titulografica');
+            var central=document.getElementById('central'); 
+            var keys = document.getElementById('keys');
+            
+            var titulo2=document.getElementById('titulo2');
+            var central2=document.getElementById('central2'); 
+            var keys2 = document.getElementById('keys2');*/
+            
+            document.getElementById('titulografica').value='';
+            document.getElementById('central').value='';
+            
+            //titulo2.innerHTML += '<h3>' + titulografica.value + '</h3>';
+            //central2.innerHTML += '<h4>' + central.value + '</h4>';
+            //keys2.innerHTML += '<h5>' + keys.value + '</h5>';
+            
+            $('#modalcreate').modal('hide');
+            $('#modalbusqueda').modal('show');
+
+        }
+            
+        //devuelve posicion en la tabla de resultados del tag con id=id 
+        function correspondenciaRes(id){
+            /*
+            var posicion=-1;
+            
+            for(var i=0;i<resultados.length;i++){
+                //alert(resultados[i][0]);
+                if(id==resultados[i][0]) posicion=i;
+            }
+             
+            return posicion;*/
+        }
+        
+        //devuelve posicion en la tabla de resultados del tag con id=id 
+        function correspondenciaEleg(id){
+            /*
+            var posicion=-1;
+            
+            for(var i=0;i<elegidos.length;i++){
+                if(id==elegidos[i][0]) posicion=i;
+            }
+             
+            return posicion;*/
+        }
+                
+        
+        function añadirTagElegidos(id) {/*
+        
+            //copiamos en matriz de elegidos el resultado seleccionado y limpiamos vbles globales
+            //alert(id);
+            var current=correspondenciaRes(id);
+            //alert(current);
+            elegidos.push(resultados[current]);
+            
+            $("#previsualizar").prop('disabled',false);
+            
+            resultados=[];
+            
+            //limpiamos resultados obtenidos del html
+            var bodyresultados = document.getElementById("bodyresultados");
+            bodyresultados.innerHTML = '';
+            while (bodyresultados.childElementCount > 0) {
+                bodyresultados.removeChild(bodyresultados.firstElementChild);
+            }
+            
+            //limpiamos campos tag y descriptor del html
+            document.getElementById('tag').value='';
+            document.getElementById('descripcion').value='';
+            
+            //rellenamos tabla elegidos del html
+            var bodyelegidos=document.getElementById("bodyelegidos");
+            var tag=elegidos.pop();
+            elegidos.push(tag);
+
+                  var fila =  '<tr><td>' + tag[1] +
+                              '</td><td>' + tag[6] +
+                              '</td><td>' + tag[5] + 
+                              '</td><td>' + tag[3] +
+                              '</td><td><input size="5%" onchange="hayCambios()" id="minimo'+id+'" placeholder="Min" type="text" required><span class="help-inline"></span></td><td><input size="5%" onchange="hayCambios()" id="maximo'+id+'" placeholder="Max" type="text" required><span class="help-inline"></span></td><td><select onchange="hayCambios()" id="leyenda'+id+'"><option selected value="tag">izda</option><option value="right">dcha</option></td><td><button class="btn btn-default" onclick="borrarElegido('+id+')"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>' +
+                              '</td></tr></div>';
+            
+            bodyelegidos.innerHTML += fila;*/
+        
+        }
+        
+        function borrarElegido(identificador) {
+            
+            //identificador=tag[0] es id no id2, es decir, el id de resultado
+            /*var name=elegidos[identificador-1][1];
+            alert(name);
+            for(i=0;i<document.getElementById("bodyelegidos").children.length;i++){
+                    var tag= document.getElementById("bodyelegidos").children[i].innerHTML;
+                    var aux=resp.split('td');
+                    tag=tag.slice(4,0);//incompleto
+
+                if(document.getElementById("bodyelegidos").children[i].innerHTML==name){
+                 var list = document.getElementById("bodyelegidos");   // Get the <ul> element with id="myList"
+                 list.removeChild(list.children[id2]); 
+                }
+            }
+            /*delete elegidos[id2];
+            id2--;*/
+            
+            var current=correspondenciaEleg(identificador);
+            //borramos html de elegidos
+            var list = document.getElementById("bodyelegidos");   // Get the <ul> element with id="myList"
+            list.removeChild(list.children[current]); 
+            
+            //borramos la entrada en la tabla de elegidos
+            elegidos.splice(current,1);
+            
+            if(elegidos.length>0){ $("#previsualizar").prop('disabled',false); }
+            else{ $("#previsualizar").prop('disabled',true); }
+        
+        }
+        
+        function atrass(){
+            
+            //limpiar vbles globales elegidos
+            //elegidos=[];
+            //$("#previsualizar").prop('disabled',true);
+            //$("#siguiente").prop('disabled',true);
+            //id2=0;   
+            
+            //limpiamos campos tag y descriptor del html
+            document.getElementById('tag').value='';
+            document.getElementById('descripcion').value='';
+            //limpiamos resultados obtenidos del html
+            var bodyresultados = document.getElementById("bodyresultados");
+            bodyresultados.innerHTML = '';
+            while (bodyresultados.childElementCount > 0) {
+                bodyresultados.removeChild(bodyresultados.firstElementChild);
+            }
+            //limpiamos elegidos del html
+            /*var bodyelegidos = document.getElementById("bodyelegidos");
+            bodyelegidos.innerHTML = '';
+            while (bodyelegidos.childElementCount > 0) {
+                bodyelegidos.removeChild(bodyelegidos.firstElementChild);
+            }*/
+            
+            $('#modalbusqueda').modal('hide');
+            $('#modalcreate').modal('show');    
+            
+        }
+        
+        function atrasss(){
+            
+            $('#modalgrafica').modal('hide');
+            $('#modalbusqueda').modal('show');
+            
+            //limpiar vbles globales elegidos
+            //elegidos=[];
+            data=[];
+            document.getElementById('ejemplo2').value="";
+            //$("#previsualizar").prop('disabled',true);
+            
+            //limpiamos campos tag y descriptor del html
+            document.getElementById('tag').value='';
+            document.getElementById('descripcion').value='';
+            //limpiamos resultados obtenidos del html
+            var bodyresultados = document.getElementById("bodyresultados");
+            bodyresultados.innerHTML = '';
+            while (bodyresultados.childElementCount > 0) {
+                bodyresultados.removeChild(bodyresultados.firstElementChild);
+            }
+            //limpiamos elegidos del html
+            /*var bodyelegidos = document.getElementById("bodyelegidos");
+            bodyelegidos.innerHTML = '';
+            while (bodyelegidos.childElementCount > 0) {
+                bodyelegidos.removeChild(bodyelegidos.firstElementChild);
+            }*/
+        }
+
+        //comprobamos si han dado a atras y cambiado los elegidos y sus minimos, maximos ...
+        function hayCambios(){/*
+            
+            //recorremos elegidos cogiendo todos los valores min y max y eje para cada tag
+            for(var i=0;i<elegidos.length;i++){
+                
+                var index=elegidos[i][0];
+                
+                minimos[i]=document.getElementById("minimo"+index).value;
+                maximos[i]=document.getElementById("maximo"+index).value;  
+            
+                if (minimos[i]=="") minimos[i]=elegidos[i][6];
+                if (maximos[i]=="") maximos[i]=elegidos[i][5];
+                
+                leyendas[i]=elegidos[i][1];//tags
+                unidades[i]=elegidos[i][3];
+            }*/
+     
+        }
+        
+        window.mobilecheck = function() {/*
+          var check = false;
+          (function(a,b){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);
+          return check;*/
+        }
+        
+        function previsualizar(){/*
+                
+            //document.getElementById("tituloGrafica").innerHTML+=titulografica;
+            document.getElementById("subtituloGrafica").innerHTML=central;
+            
+            $('#modalbusqueda').modal('hide');
+            $('#modalgrafica').modal('show'); 
+            
+            google.load('visualization', '1.1', {packages: ['line', 'corechart']});
+            var data = new google.visualization.DataTable();
+
+            hayCambios();
+            
+            var tagsconc=elegidos[0][1];
+            var serversconc=elegidos[0][4];
+            
+            for (i=1;i<elegidos.length;i++){
+           
+                tagsconc=tagsconc.concat('|');
+                tagsconc=tagsconc.concat(elegidos[i][1]);
+                serversconc=serversconc.concat('|');
+                serversconc=serversconc.concat(elegidos[i][4]);
+            }
+            
+            tagGrafica(tagsconc,serversconc,4);
+            
+            if(window.mobilecheck()){
+                var ratio = window.devicePixelRatio || 1;
+                var w = $(window).width() - (elegidos.length+1)*30;
+                var h = $(window).height();
+                
+            }
+            else {
+                var w=800;
+                var h=600;
+            }
+            
+            var leftOffset=0;
+            var rightOffset=0;
+            //alert("ancho: "+w+" y alto: "+h);
+            // determine the number of rows and columns.
+            var numRows = tags.length;
+            var numCols = tags[0].length;
+            data.addColumn('date', 'Fechas');  
+            data.addColumn({type: 'string', role: 'domain'}, 'Tags');       
+            for(var t=0;t<numCols;t++){
+              data.addColumn('number', leyendas[t] + "\n"+ tags[tags.length-3][t]);  
+            }
+            // in this case the first column is of type 'string'.
+            // data.addColumn('string', 'Fecha');
+            data.addRows(numRows);
+                
+            for(var j=0;j<numRows-1;j++){
+              // all other columns are of type 'number'.
+              
+                for (var i = 0; i < numCols+1; i++){
+              
+                    var time=fechas[j].slice(11,16);                  
+            
+                    if(i==0){ alert("sdfgdsf");
+                        data.setCell(j, 0, new Date(parseInt(fechas[j].slice(0,4)), parseInt(fechas[j].slice(5,7)), 
+                                                    parseInt(fechas[j].slice(8,10)), parseInt(fechas[j].slice(11,13)), 
+                                                    parseInt(fechas[j].slice(14,16)), parseInt(fechas[j].slice(17,19))));
+                    }else if(i==1){
+                         data.setCell(j, 1,'tag'+i);
+                    }
+                    
+                    else data.setCell(j, i, tags[j][i-1]);
+
+                }
+            }
+                
+            var materialOptions = {
+                
+                chart: {
+                        subtitle: ""+titulografica+"",
+                        //subtitle: ''+ central + ' #' + keys +''
+                },
+                
+                chartArea: {
+                        width:'80%',
+                        height:'80%',
+                        left: 100
+                },
+                
+                legend:{
+                    position: 'top',
+                    maxLines: 2,
+                    textStyle: {fontSize: 10}
+                },
+                
+                explorer: {
+			            maxZoomOut:2,
+                        maxZoomIn:200,
+			            keepInBounds: true
+                },
+                
+                width: w,
+                height: h,
+                
+                focusTarget:'category',
+                left: leftOffset,
+                right: rightOffset,
+                
+                series: {
+                      // Gives each series an axis name that matches the Y-axis below.
+                        0: {targetAxisIndex: '0'},
+                        1: {targetAxisIndex: '1'},
+                        2: {targetAxisIndex: '2'},
+                        3: {targetAxisIndex: '3'},
+                        4: {targetAxisIndex: '4'},
+                        5: {targetAxisIndex: '5'},
+                        6: {targetAxisIndex: '6'},
+                        7: {targetAxisIndex: '7'},
+                        8: {targetAxisIndex: '8'},
+                        9: {targetAxisIndex: '9'},
+                   
+                    },
+                      // Adds labels to each axis; they don't have to match the axis names.                      
+                vAxes: {      
+                
+                        0: {title: unidades[0], titleTextStyle:{color:'#4285F4'}, side:"left", viewWindow:{max:parseInt(maximos[0]), min:parseInt(minimos[0])}, textStyle:{color:'#4285F4'}},
+                        1: {title: unidades[1], titleTextStyle:{color:'#DB4437'}, side:"left", viewWindow:{max:parseInt(maximos[1]), min:parseInt(minimos[1])}, textStyle:{color:'#DB4437'}},
+                        2: {title: unidades[2], titleTextStyle:{color:'#F4B400'}, side:"left", viewWindow:{max:parseInt(maximos[2]), min:parseInt(minimos[2])}, textStyle:{color:'#F4B400'}},
+                        3: {title: unidades[3], titleTextStyle:{color:'#0F9D58'}, side:"left", viewWindow:{max:parseInt(maximos[3]), min:parseInt(minimos[3])}, textStyle:{color:'#0F9D58'}},
+                        4: {title: unidades[4], titleTextStyle:{color:'#AB47BC'}, side:"left", viewWindow:{max:parseInt(maximos[4]), min:parseInt(minimos[4])}, textStyle:{color:'#AB47BC'}},
+                        5: {title: unidades[5], titleTextStyle:{color:'#00ACC1'}, side:"left", viewWindow:{max:parseInt(maximos[5]), min:parseInt(minimos[5])}, textStyle:{color:'#00ACC1'}},
+                        6: {title: unidades[6], titleTextStyle:{color:'#FF7043'}, side:"left", viewWindow:{max:parseInt(maximos[6]), min:parseInt(minimos[6])}, textStyle:{color:'#FF7043'}},
+                        7: {title: unidades[7], titleTextStyle:{color:'#9E9D24'}, side:"left", viewWindow:{max:parseInt(maximos[7]), min:parseInt(minimos[7])}, textStyle:{color:'#9E9D24'}},
+                        8: {title: unidades[8], titleTextStyle:{color:'#5C6BC0'}, side:"left", viewWindow:{max:parseInt(maximos[8]), min:parseInt(minimos[8])}, textStyle:{color:'#5C6BC0'}},
+                        9: {title: unidades[9], titleTextStyle:{color:'#F06292'}, side:"left", viewWindow:{max:parseInt(maximos[9]), min:parseInt(minimos[9])}, textStyle:{color:'#F06292'}},
+
+                    },
+                    
+                };
+                                    
+            var chart = new google.charts.Line(document.getElementById('ejemplo2'));
+            //var chart = new google.visualization.LineChart(document.getElementById('ejemplo2'));
+            chart.draw(data, google.charts.Line.convertOptions(materialOptions));*/
+
+        }
+        
+        //rellena vble global con valores de los tags solicitados y fechas global
+        function tagGrafica(tagsconcat, serversconcat, numhoras){ /*
+            
+            //alert('tags concatenados: ' + tagsconcat + ' y servers concatenados: '+serversconcat);
+            
+            $.ajax({ //llamada ajax
+				
+                async:false,				
+                url: "http://192.168.0.105:8080/ServiciosSkan/services/Servicio/tagGrafica", //la URL donde se realiza la petición
+				method:'POST', //El método HTTP usado para la petición
+				data:{tag:tagsconcat, server:serversconcat, horas:numhoras},//los parámetros que se usaran para la solicitud
+				//data:{tag:tag, tag2:tag2, server:server, server2:server2},				
+				
+                success: function (response){   
+
+                    var resp=(new XMLSerializer()).serializeToString(response);//pasamos a string la respuesta
+
+                    resp=resp.slice(69);//recortamos los caracteres no deseados
+                    resp=resp.slice(0,-36);
+
+                    var aux=resp.split('|$|');//numero de elementos=numero de valores devueltos
+                    var aux2=[];//numero de elementos = numero de tags pedidos + 1 (fecha)
+                    
+                    tags = new Array(aux.length);
+                    
+                    for (var i=0; i<aux.length-1; i++){ //-1 porque el ultimo elemento esta vacio
+                        
+                        aux2=aux[i].split('|');
+                        fechas[i]=aux2[0];
+                        aux2.splice(0,1);
+                        //tags[i]=new Array (aux2.length);
+                        tags[i]=aux2;                        
+                        for(var j=0;j<aux2.length;j++){
+
+                            tags[i][j]=parseFloat(tags[i][j]);
+                    }
+                    
+                    }
+                },
+								
+                failure: function (error){
+                         alert("no resibimos respuesta wei");
+                }
+            });//ajax
+           */
+        }
+       
+        google.load('visualization', '1.1', {packages: ['line', 'corechart']}); 
+        //google.setOnLoadCallback(drawChart);        
+        
+        function guardarTag(){/*
+     
+            //user y passwd
+            var aux=document.cookie.split(';');
+            var aux1=aux[0].split('=');
+            var username=aux1[1];            
+            var aux2=aux[1].split('=');
+            var passwd=aux2[1];
+
+            var tgs=elegidos[0][1];
+            var servs=elegidos[0][4];
+            var uds=elegidos[0][3];
+            var spans=elegidos[0][5];
+            var zeros=elegidos[0][6];
+            var spnzrs=zeros.concat('$');
+            spnzrs=spnzrs.concat(spans);
+            var mins=minimos[0];
+            var maxs=maximos[0];
+            var minmaxs=mins.concat('$');
+            minmaxs=minmaxs.concat(maxs);
+            
+            for (i=1;i<elegidos.length;i++){
+           
+                tgs=tgs.concat('|');
+                tgs=tgs.concat(elegidos[i][1]);
+                servs=servs.concat('|');
+                servs=servs.concat(elegidos[i][4]);
+                uds=uds.concat('|');
+                uds=uds.concat(elegidos[i][3]);
+                spans=elegidos[i][5];
+                zeros=elegidos[i][6];
+                spnzrs=spnzrs.concat('|');
+                spnzrs=spnzrs.concat(zeros);
+                spnzrs=spnzrs.concat('$');
+                spnzrs=spnzrs.concat(spans);
+                mins=minimos[i];
+                maxs=maximos[i];
+                minmaxs=minmaxs.concat('|');
+                minmaxs=minmaxs.concat(mins);
+                minmaxs=minmaxs.concat('$');
+                minmaxs=minmaxs.concat(maxs);
+            }
+
+            $.ajax({ //llamada ajax
+                   async: false,				
+                   url: "http://192.168.0.105:8080/ServiciosSkan/services/Servicio/guardarGraficaUsuario", //la URL donde se realiza la petición
+                   method:'POST', //El método HTTP usado para la petición
+                   data:{nombre:username,passwd:passwd,nombreGrafica:titulografica,centralGrafica:central,tags:tgs,unidades:uds,rangos:minmaxs,spamsZero:spnzrs, servers: servs},
+
+				success: function (response){
+
+                    var respuesta=(new XMLSerializer()).serializeToString(response);//pasamos a string la respuesta
+
+                    respuesta=respuesta.slice(80);//recortamos los caracteres no deseados
+                    respuesta=respuesta.slice(0,-47);
+                    
+                    if(respuesta=="true"){
+                                    
+                        $('#modalgrafica').modal('hide');
+                        $('#modalguardado').modal('show');
+                    }
+			    },
+								
+                failure: function (error){
+				    alert("no resibimos respuesta wei");
+			        }
+                });//ajax
+            */
+        }
+        
+        function getGraficas(id){/*
+            
+            //user y passwd
+            var aux=document.cookie.split(';');
+            var aux1=aux[0].split('=');
+            var username=aux1[1];            
+            var aux2=aux[1].split('=');
+            var password=aux2[1];
+            
+            graficas=[];
+
+            var elementabono = document.getElementById("bodyplanes");
+            var elementctsoto = document.getElementById("bodyctsoto");
+            var elementccsoto = document.getElementById("bodyccsoto");
+            var elementcastejon = document.getElementById("bodycastejon");
+            var elementcchh = document.getElementById("bodycchh");
+            var elementcogeneracion = document.getElementById("bodycogeneracion");
+            
+            switch(id){
+                    
+            case 1:
+            elementabono.innerHTML = '';
+            while (elementabono.childElementCount > 0) {
+                elementabono.removeChild(elementabono.firstElementChild);
+            }
+            break;
+            
+            case 2:
+            elementctsoto.innerHTML = '';
+            while (elementctsoto.childElementCount > 0) {
+                elementctsoto.removeChild(elementctsoto.firstElementChild);
+            }
+            break;
+                    
+            case 3:
+            elementccsoto.innerHTML = '';
+            while (elementccsoto.childElementCount > 0) {
+                elementccsoto.removeChild(elementccsoto.firstElementChild);
+            }
+            break;        
+            
+            case 4:        
+            elementcastejon.innerHTML = '';
+            while (elementcastejon.childElementCount > 0) {
+                elementcastejon.removeChild(elementcastejon.firstElementChild);
+            }
+            break;
+        
+            case 5:
+            elementcchh.innerHTML = '';
+            while (elementcchh.childElementCount > 0) {
+                elementcchh.removeChild(elementcchh.firstElementChild);
+            }
+            break;
+                    
+            case 6:
+            elementcogeneracion.innerHTML = '';
+            while (elementcogeneracion.childElementCount > 0) {
+                elementcogeneracion.removeChild(elementcogeneracion.firstElementChild);
+            }
+            break;
+            
+            }
+            
+            $.ajax({ //llamada ajax
+                   async: false,				
+                   url: "http://192.168.0.105:8080/ServiciosSkan/services/Servicio/getGraficasUsuario", //la URL donde se realiza la petición
+                   method:'POST', //El método HTTP usado para la petición
+                   data:{user:username,passwd:password},
+
+				success: function (response){
+
+                    var respuesta=(new XMLSerializer()).serializeToString(response);//pasamos a string la respuesta
+                    
+                    respuesta=respuesta.slice(77);//recortamos los caracteres no deseados
+                    respuesta=respuesta.slice(0,-44);
+    
+                    //21|shsdfhds|fhsdfhsdf|$|22|dasgs|dagsd|$|23|drygsdfg|fsdgsd|$|24|dsagsa|dgasdg|$|25|safdgds|fgasdg|$|26|dasga|sddasg|$|27|gsadd|sgsadg|$|
+                    var aux=respuesta.split('|$|');
+                    //graficas = new Array(aux.length);
+                    var aux2=[];
+                    for (var i=0; i<aux.length-1; i++){ //-1 porque el ultimo elemento esta vacio
+                        //j=i*3;
+                        aux2=aux[i].split('|');
+                        graficas.push([aux2[0], aux2[1], aux2[2]]);
+                    }
+                    
+                    var filag;
+                    
+                    //metemos en la tabla los elementos
+                    for (var i=0; i<graficas.length; i++) {
+                        
+                        filag =     '<div id=' + graficas[i][0] + 
+                                    '><tr><td>' + graficas[i][1] +
+                                    '</td><td><button class="btn btn-default" onclick="getTag('+ graficas[i][0] +')">' +
+                                    '<span class="glyphicon glyphicon-picture" aria-hidden="true"></span>  Visualizar</button>' +
+                                    '</td></tr></div>';
+                        
+                        switch(graficas[i][2]) {
+                            
+                            case 'CT-ABOÑO':
+                                if(id==1) elementabono.innerHTML += filag;
+                                break;
+                                
+                            case 'CT-SOTO':
+                                if(id==2) elementctsoto.innerHTML += filag;
+                                break;
+                                
+                            case 'CC-SOTO':
+                                if(id==3) elementccsoto.innerHTML += filag;
+                                break;
+                                
+                            case 'CC-CASTEJON':
+                                if(id==4) elementcastejon.innerHTML += filag;
+                                break;
+                                
+                            case 'CCHH':
+                                if(id==5) elementcchh.innerHTML += filag;
+                                break;
+                                
+                            case 'COGENERACION':
+                                if(id==6) elementcogeneracion.innerHTML += filag;
+                                break; 
+
+                        }
+                    }
+
+			    },
+								
+                failure: function (error){
+				    alert("no resibimos respuesta wei");
+			        }
+                
+                });//ajax
+             */
+        }
+
+                   
+        function getTag(ident){ 
+            
+            google.load('visualization', '1.1', {packages: ['line', 'corechart']});
+            var data = new google.visualization.DataTable();
+            
+            //$('#modalbusqueda').modal('hide');
+            //$('#modalgraficafinal').modal('show'); 
+            
+            var tagsconcat="";
+            var servsconcat="";
+            var idgraf=[];
+            var tags2=[];
+            var uds=[];
+            var zeros=[];
+            var spans=[];
+            var mins=[];
+            var maxs=[];
+            
+            var titulograficag;
+            var centralg;
+            
+            for (i=0; i<graficas.length; i++){
+                
+                if (graficas[i][0]==ident){
+                    titulograficag=graficas[i][1];
+                    centralg=graficas[i][2];
+                }
+            }
+            
+            $.ajax({ //llamada ajax
+                   async: false,				
+                   url: "http://192.168.0.105:8080/ServiciosSkan/services/Servicio/getTag", //la URL donde se realiza la petición
+                   method:'POST', //El método HTTP usado para la petición
+                   data:{idgraf:ident},
+
+				success: function (response){
+
+                    var respuesta=(new XMLSerializer()).serializeToString(response);//pasamos a string la respuesta
+
+                    respuesta=respuesta.slice(65);//recortamos los caracteres no deseados
+                    respuesta=respuesta.slice(0,-32);
+
+                    //33|21ACA10CE604_XJ50|brayton.intrahc.com|MW|-58.0|638.0|-58.0$638.0|--N/A--|$|
+                    var aux=respuesta.split('|$|');
+                    var aux2=[];
+                    var aux3=[];
+                    j=0;
+                    
+                    for (var i=0; i<aux.length-1; i++){ //-1 porque el ultimo elemento esta vacio
+                        
+                        aux2=aux[i].split('|');
+                        idgraf[j]=aux2[0];//id
+                        tags2[j]=aux2[1];//tag
+                        if (i!=0) tagsconcat=tagsconcat.concat('|');
+                        tagsconcat=tagsconcat.concat(tags2[j]);
+                        if (i!=0) servsconcat=servsconcat.concat('|');
+                        servsconcat=servsconcat.concat(aux2[2]);
+                        uds[j]=aux2[3];//uds
+                        zeros[j]=aux2[4];//zero
+                        spans[j]=aux2[5];//span
+                        aux3=aux2[6].split('$');// min max hay que partirlo
+                        mins[j]=aux3[0];
+                        maxs[j]=aux3[1];
+                        j++;
+                    }
+
+			    },
+								
+                failure: function (error){
+				    alert("no resibimos respuesta wei");
+			        }
+                
+            });//ajax
+
+            tagGrafica(tagsconcat,servsconcat, 4);
+            
+            //document.getElementById("tituloGraficaFinal").innerHTML=titulografica;
+            
+            if(window.mobilecheck()){
+                var ratio = window.devicePixelRatio || 1;
+                var w = $(window).width() - (elegidos.length+1)*30;
+                var h = $(window).height();
+                
+            }
+            else {
+                var w=1200;
+                var h=900;
+            }
+            
+            //var leftOffset=0;
+            //var rightOffset=0;
+            //alert("ancho: "+w+" y alto: "+h);
+            // determine the number of rows and columns.
+            var numRows = tags.length;
+            var numCols = tags[0].length;
+            data.addColumn('date', 'Fechas');  
+            
+            for(var t=0;t<numCols;t++){
+              data.addColumn('number', tags2[t]/* + "\n"+ tags[tags.length-3][t]*/);  
+            }
+            // in this case the first column is of type 'string'.
+            // data.addColumn('string', 'Fecha');
+            data.addRows(numRows);
+                
+            for(var j=0;j<numRows-1;j++){
+              // all other columns are of type 'number'.
+              
+                for (var i = 0; i < numCols+1; i++){
+              
+                    var time=fechas[j].slice(11,16);                  
+            
+                    if(i==0){
+                        data.setCell(j, 0, new Date(parseInt(fechas[j].slice(0,4)), parseInt(fechas[j].slice(5,7)), 
+                                                    parseInt(fechas[j].slice(8,10)), parseInt(fechas[j].slice(11,13)), 
+                                                    parseInt(fechas[j].slice(14,16)), parseInt(fechas[j].slice(17,19))));
+                    }
+                    
+                    else {data.setCell(j, i, tags[j][i-1]);}
+
+                }
+            }
+                
+            var materialOptions = {
+                
+                chart: {
+                        title: ''+titulograficag+'',
+                        //subtitle: ''+ central +''
+                },
+                
+                chartArea: {
+                        width:'80%',
+                        height:'40%',
+                        left: 100
+                },
+                
+                legend:{
+                    position: 'none',
+                    maxLines: 2,
+                    textStyle: {fontSize: 12}
+                },
+                
+                explorer: {
+			            maxZoomOut:2,
+                        maxZoomIn:200,
+			            keepInBounds: true
+                },
+                
+                focusTarget:'category',
+                width: w,
+                height: h,
+                //left: leftOffset,
+                //right: rightOffset,
+                
+                series: {
+                      // Gives each series an axis name that matches the Y-axis below.
+                        0: {targetAxisIndex: '0'},
+                        1: {targetAxisIndex: '1'},
+                        2: {targetAxisIndex: '2'},
+                        3: {targetAxisIndex: '3'},
+                        4: {targetAxisIndex: '4'},
+                        5: {targetAxisIndex: '5'},
+                        6: {targetAxisIndex: '6'},
+                        7: {targetAxisIndex: '7'},
+                        8: {targetAxisIndex: '8'},
+                        9: {targetAxisIndex: '9'},
+                   
+                    },
+                      // Adds labels to each axis; they don't have to match the axis names.                      
+                vAxes: {      
+                
+                        0: {title: uds[0], titleTextStyle:{color:'#4285F4'}, side:"left", viewWindow:{max:parseInt(maxs[0]), min:parseInt(mins[0])}, textStyle:{color:'#4285F4'}},
+                        1: {title: uds[1], titleTextStyle:{color:'#DB4437'}, side:"left", viewWindow:{max:parseInt(maxs[1]), min:parseInt(mins[1])}, textStyle:{color:'#DB4437'}},
+                        2: {title: uds[2], titleTextStyle:{color:'#F4B400'}, side:"left", viewWindow:{max:parseInt(maxs[2]), min:parseInt(mins[2])}, textStyle:{color:'#F4B400'}},
+                        3: {title: uds[3], titleTextStyle:{color:'#0F9D58'}, side:"left", viewWindow:{max:parseInt(maxs[3]), min:parseInt(mins[3])}, textStyle:{color:'#0F9D58'}},
+                        4: {title: uds[4], titleTextStyle:{color:'#AB47BC'}, side:"left", viewWindow:{max:parseInt(maxs[4]), min:parseInt(mins[4])}, textStyle:{color:'#AB47BC'}},
+                        5: {title: uds[5], titleTextStyle:{color:'#00ACC1'}, side:"left", viewWindow:{max:parseInt(maxs[5]), min:parseInt(mins[5])}, textStyle:{color:'#00ACC1'}},
+                        6: {title: uds[6], titleTextStyle:{color:'#FF7043'}, side:"left", viewWindow:{max:parseInt(maxs[6]), min:parseInt(mins[6])}, textStyle:{color:'#FF7043'}},
+                        7: {title: uds[7], titleTextStyle:{color:'#9E9D24'}, side:"left", viewWindow:{max:parseInt(maxs[7]), min:parseInt(mins[7])}, textStyle:{color:'#9E9D24'}},
+                        8: {title: uds[8], titleTextStyle:{color:'#5C6BC0'}, side:"left", viewWindow:{max:parseInt(maxs[8]), min:parseInt(mins[8])}, textStyle:{color:'#5C6BC0'}},
+                        9: {title: uds[9], titleTextStyle:{color:'#F06292'}, side:"left", viewWindow:{max:parseInt(maxs[9]), min:parseInt(mins[9])}, textStyle:{color:'#F06292'}},
+
+                    },
+                    
+                };
+                                    
+            var chart2 = new google.charts.Line(document.getElementById('graficagrande'));
+            //var chart = new google.visualization.LineChart(document.getElementById('ejemplo2'));
+            chart2.draw(data, google.charts.Line.convertOptions(materialOptions));
+            
+            var filaopc;
+            for (i=0;i<zeros.length;i++){
+            
+                filaopc =   '<div id=' + idgraf[i] + 
+                            '><tr><td>' + tags2[i] +
+                            '</td><td>' + zeros[i] +
+                            '</td><td>' + spans[i] +
+                            '</td><td><input size="5%" id="minimo'+idgraf[i]+'" placeholder="'+mins[i]+'" type="text" required><span class="help-inline"></span>' +
+                            '</td><td><input size="5%" id="maximo'+idgraf[i]+'" placeholder="'+maxs[i]+'" type="text" required><span class="help-inline"></span>' +
+                            '</td></tr></div>';
+                bodyopciones.innerHTML+=filaopc;
+            }
+                
+                 
+        }
+        
+        
+        $(document).ready(function() {
+            
+            var bodywelcome = document.getElementById('welcomeUser');
+            var aux=document.cookie.split(';');
+            var aux1=aux[0].split('=');
+            var username=aux1[1];
+            
+            var html="<span><b>  "+username+"&nbsp;&nbsp;&nbsp;&nbsp;</b></span>";            
+            bodywelcome.innerHTML=html;
+        });
+        
+    </script>
+      
+  </body>
+
+=======
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -1437,4 +2800,5 @@
       
   </body>
 
+>>>>>>> origin/master
 </html>
